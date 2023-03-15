@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <meta
+    http-equiv="content-type"
+    content="text/html;charset=UTF-8"
+  /> 
+  <head>
+    {% load static %}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{% block title %}{% endblock title %} {% if request.path == '/' %}{% else %}|{% endif %} Uwa Agbai</title>
+    <link
+      rel="preload"
+      href="{% static 'fonts/noe-display-medium.woff2' %}"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'styles/themes.css' %}" />
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}" />
+    <meta
+      name="description"
+      content="Uwa Agbai is a software developer based in Owerri, Nigeria."
+    />
+    <meta property="og:title" content="{% block og:title %}{% endblock og:title %} | Uwa Agbai" />
+    <meta
+      property="og:description"
+      content="Uwa Agbai is a software developer based in Owerri, Nigeria."
+    />
+    <meta property="og:url" content="{{ request.build_absolute_uri }}" />
+    <meta property="og:image" content="{% static 'images/avatar.jpg' %}" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="author" content="Uwa Agbai" />
+    <meta property="og:site_name" content="Uwa Agbai" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:site" content="@wacodev_" />
+    <meta name="twitter:creator" content="@wacodev_" />
+    <link rel="canonical" href="{% url 'index' %}" />
+    <script type="application/ld+json">
+      {
+        "name": "Uwa Agbai",
+        "description": "Uwa Agbai is a software developer based in Owerri, Nigeria.",
+        "author": {
+          "@type": "Person",
+          "name": "Uwa Agbai"
+        },
+        "@type": "WebSite",
+        "url": "{% url 'index' %}",
+        "image": "{% static 'images/avatar.jpg' %}",
+        "headline": "Max Böck",
+        "sameAs": ["https://twitter.com/wacodev_", "https://github.com/uwaagbai1"],
+        "@context": "http://schema.org"
+      }
+    </script>
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'images/favicon/site.webmanifest' %}">
+    <meta name="theme-color" content="#1a1a1a" />
+    <link
+      type="application/atom+xml"
+      rel="alternate"
+      href="feed.xml"
+      title="Max Böck"
+    />
+    <link
+      type="application/atom+xml"
+      rel="alternate"
+      title="Uwa Agbai | Welcome"
+    />
+  </head>
+  <body>
+    <a href="#main" class="sr-skip-link">skip to main content</a>
+    <div class="titlebar"><div class="titlebar__inner"></div></div>
+    <div class="hfeed layout" role="document">
+      <header class="header" role="banner">
+        <div class="header__inner container">
+          <a class="header__brand" href="{% url 'index' %}" rel="home"
+            ><img
+              class="header__avatar"
+              src="{% static 'images/avatar.jpg' %}"
+              width="48"
+              height="48"
+              alt="" />
+            <span class="header__name"
+              ><span>Uwa Agbai</span>
+              <span class="header__verification" aria-hidden="true"
+                ><svg
+                  class="icon icon--verified"
+                  version="1.1"
+                  viewBox="0,0,24,24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.71-3.998-3.818-3.998-.47 0-.92.084-1.336.25C14.818 2.415 13.51 1.5 12 1.5s-2.816.917-3.437 2.25c-.415-.165-.866-.25-1.336-.25-2.11 0-3.818 1.79-3.818 4 0 .494.083.964.237 1.4-1.272.65-2.147 2.018-2.147 3.6 0 1.495.782 2.798 1.942 3.486-.02.17-.032.34-.032.514 0 2.21 1.708 4 3.818 4 .47 0 .92-.086 1.335-.25.62 1.334 1.926 2.25 3.437 2.25 1.512 0 2.818-.916 3.437-2.25.415.163.865.248 1.336.248 2.11 0 3.818-1.79 3.818-4 0-.174-.012-.344-.033-.513 1.158-.687 1.943-1.99 1.943-3.484zm-6.616-3.334l-4.334 6.5c-.145.217-.382.334-.625.334-.143 0-.288-.04-.416-.126l-.115-.094-2.415-2.415c-.293-.293-.293-.768 0-1.06s.768-.294 1.06 0l1.77 1.767 3.825-5.74c.23-.345.696-.436 1.04-.207.346.23.44.696.21 1.04z"
+                  /></svg></span></span
+          ></a>
+          <div class="header__nav">
+            <nav class="nav js-nav" role="navigation" tabindex="-1">
+              <button
+                class="iconbtn nav__togglebtn js-nav-toggle"
+                aria-expanded="false"
+                aria-controls="nav-menu"
+                aria-label="toggle menu"
+              >
+                <span class="menuicon"
+                  ><span class="menuicon__bar"></span>
+                  <span class="menuicon__bar"></span>
+                  <span class="menuicon__bar"></span>
+                  <span class="menuicon__bar"></span
+                ></span>
+              </button>
+              <div class="nav__content">
+                <ul class="nav__menu js-nav-menu" id="nav-menu">
+                  <li class="nav__item nav__item{% if request.path == '/' %}--active{% endif %}">
+                    <a href="{% url 'index' %}#main" class="nav__link" aria-current="page"
+                      ><span class="nav__num" aria-hidden="true">01</span>
+                      Home</a
+                    >
+                  </li>
+                  <li class="nav__item nav__item{% if request.path == '/about-me/' %}--active{% endif %}">
+                    <a href="{% url 'about' %}" class="nav__link"
+                      ><span class="nav__num" aria-hidden="true">02</span>
+                      About</a
+                    >
+                  </li>
+                  <li class="nav__item nav__item{% if request.path == '/my-projects/' %}--active{% endif %}">
+                    <a href="{% url 'project' %}" class="nav__link"
+                      ><span class="nav__num" aria-hidden="true">03</span>
+                      Projects</a
+                    >
+                  </li>
+                  <li class="nav__item">
+                    <a href="https://wacodev.hashnode.dev/" target="_blank" class="nav__link"
+                      ><span class="nav__num" aria-hidden="true">04</span>
+                      Blog</a
+                    >
+                  </li>
+                  <li class="nav__item nav__item{% if request.path == '/contact-me/' %}--active{% endif %}">
+                    <a href="{% url 'contact' %}" class="nav__link"
+                      ><span class="nav__num" aria-hidden="true">05</span>
+                      Contact</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="nav__bg"><div class="nav__bg__circle"></div></div>
+            </nav>
+            
+          </div>
+        </div>
+      </header>
+  
+      {% block content %} {% endblock content %}
+
+      <footer class="footer h-card" role="contentinfo">
+        <div class="footer__inner container">
+          <p class="footer__item">
+            <strong>&copy; 2023</strong><br /><a
+              class="p-name u-url"
+              rel="me"
+              href="{% url 'index' %}"
+              >Uwa Agbai</a
+            >
+          </p>
+          <p class="footer__item">
+            <strong>Say Hello</strong><br /><a
+              class="p-name u-url"
+              rel="me"
+              href="{% url 'contact' %}"
+              >Contact Me</a
+            >
+          </p>
+          <p class="footer__item">
+            <strong>Social</strong><br /><a
+              href="https://www.linkedin.com/in/uwa-agbai/"
+              title="Linkedin"
+              rel="me"
+              target="_blank"
+              >Linkedin</a
+            >
+            /
+            <a href="https://github.com/uwaagbai1" title="Github" target="_blank" rel="me"
+              >Github</a
+            >
+          </p>
+          <p class="footer__item">
+            <strong>Links</strong><br /><a href="https://wacodev.hashnode.dev/"
+              >Blog</a
+            >
+          </p>
+          <p class="footer__item footer__item--right u-desktop-only">
+            <a
+              href="https://speedlify.mxb.dev/mxb.dev/"
+              class="footer__speedlify"
+              ><speedlify-score
+                speedlify-url="https://speedlify.mxb.dev"
+                hash="7dda0135"
+                score
+                weight
+              ></speedlify-score
+            ></a>
+          </p>
+          <p class="footer__item footer__item--right">
+            <a
+              href="https://github.com/maxboeck/mxb/tree/master/src/pages/index.njk"
+              class="footer__icon"
+              title="Edit this page on Github"
+              ><span class="sr-only">Edit this page on Github</span>
+              <svg
+                class="icon icon--github"
+                role="img"
+                aria-hidden="true"
+                width="24"
+                height="24"
+              >
+                <use
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xlink:href="assets/icons/icons.sprite.svg#icon-github"
+                ></use>
+              </svg> </a
+            ><a href="feed.xml" class="footer__icon" title="RSS Feed"
+              ><span class="sr-only">RSS Feed</span>
+              <svg
+                class="icon icon--feed"
+                role="img"
+                aria-hidden="true"
+                width="24"
+                height="24"
+              >
+                <use
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xlink:href="assets/icons/icons.sprite.svg#icon-feed"
+                ></use></svg>
+            </a>
+          </p>
+        </div>
+      </footer>
+    </div>
+    <script src="{% static 'scripts/main.js' %}" defer="defer"></script>
+  </body>
+</html>

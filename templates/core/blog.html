@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}Blog{% endblock title %}
+{% block og:title %}Blog{% endblock og:title %}
+{% block content %}
+
+    <main class="main container" role="main" id="main" tabindex="-1">
+        <div class="page page--blog">
+            <header class="page__header">
+                <h1 class="page__title">Writing</h1>
+            </header>
+            <div class="page__content">
+            <ol reversed class="postlist" start="45">
+                <li class="postlist__item h-entry">
+                <h2 class="postlist__title p-name">
+                    <a
+                    href="seven-reasons-why-i-dont-write/index.html"
+                    class="postlist__link u-url"
+                    rel="bookmark"
+                    >7 Reasons why I don&#39;t write</a
+                    >
+                </h2>
+                <div class="postlist__meta">
+                    <time
+                    class="postlist__date dt-published"
+                    datetime="2023-01-30T00:00:00"
+                    >30 Jan 2023 </time
+                    ><span aria-hidden="true">&sdot;</span>
+                    <span class="postlist__tags p-category">general</span>
+                </div>
+                <p class="postlist__excerpt p-summary">
+                    I didn&#39;t write a lot last year, even though I wanted to.
+                    Here are the things I tell myself that keep me from writing,
+                    and why they are probably bullshit.
+                </p>
+                </li>
+            </ol>
+            </div>
+        </div>
+    </main>
+
+{% endblock content %}

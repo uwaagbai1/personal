@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block title %}About{% endblock title %}
+{% block og:title %}About{% endblock og:title %}
+{% block content %}
+{% load static %}
+
+    <main class="main container" role="main" id="main" tabindex="-1">
+        <div class="page page--about">
+            <header class="page__header">
+            <h1 class="page__title">Hey there.</h1>
+            </header>
+            <div class="page__content page__content--fullwidth">
+            <div class="about">
+                <div class="about__header">
+                <div class="about__photo">
+                    <img
+                    class="responsive-image js-responsive-image"
+                    src="{% static 'images/avatar.jpg' %}"
+                    srcset="
+                    {% static 'images/avatar.jpg' %}   800w,
+                    {% static 'images/avatar.jpg' %} 1600w
+                    "
+                    sizes="(min-width: 940px) 40vw, 100vw"
+                    alt="Uwa Agbai"
+                    />
+                </div>
+                <div class="about__intro lead">
+                    <p>
+                        I'm Uwa Agbai, an experienced computer programmer with a passion for leveraging technology to create effective solutions. 
+                        With a focus on staying up-to-date with the latest trends and developments in the tech industry, I've worked with clients across different industries. 
+                        If you need a seasoned expert in the field, look no further than me.
+                    </p>
+                </div>
+                </div>
+                <div class="about__content markdown">
+                <h2>Education</h2>
+                <p>
+                    I am currently pursuing a Bachelor of Engineering degree in Electrical and Electronics Engineering at the Federal University of Technology Owerri. 
+                    In addition to my degree program, I have also obtained a certificate in IBM Software and DevOps Engineering, as well as certificates in Linux Certificate Management.
+                </p>
+                <h2>My Resume</h2>
+                <p>
+                    <a
+                    href="{% url 'download_resume' %}"
+                    >Download</a>
+                </p>
+                <h2>Online</h2>
+                    <ul class="about__social">
+                        <li>
+                            <i class="bi bi-github"></i>
+                            <a href="https://github.com/uwaagbai1" target="_blank">Github</a>
+                        </li>
+                        <li>
+                            <i class="bi bi-linkedin"></i>
+                            <a href="https://www.linkedin.com/in/uwa-agbai/" target="_blank">Linkedin</a>
+                        </li>
+                        <li>
+                            <i class="bi bi-journal-text"></i>
+                            <a href="https://wacodev.hashnode.dev/" target="_blank">Hashnode</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+        </div>
+    </main>
+{% endblock content %}

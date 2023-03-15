@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+  <main class="main container" role="main" id="main" tabindex="-1">
+    <div class="hero fade-in">
+      <div class="hero__inner">
+        <h1 class="hero__title">I build software solutions.</h1>
+        <p class="hero__pretitle">
+          <a href="{% url 'about' %}">Hello, my name is Uwa</a>
+        </p>
+        <div class="hero__content">
+          <p>
+            I am a software developer.
+            I also write about the web on my
+            <a href="https://wacodev.hashnode.dev/" target="_blank" class="hero__link">blog</a>.
+            Check out my amazing projects 
+            <a href="{% url 'project' %}" class="hero__link hero__link--mastodon">here</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="u-mb4">
+    </div>
+  </main>
+      
+{% endblock content %}

@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block title %}Project{% endblock title %}
+{% block og:title %}Project{% endblock og:title %}
+{% block content %}
+{% load static %}
+
+    <main class="main container" role="main" id="main" tabindex="-1">
+    <div class="note note--detail h-entry">
+        <div class="note__main">
+            <div class="note__meta">
+              <p class="note__author h-card p-author" rel="author">
+                <span class="note__author__link"
+                  ><img
+                    class="note__author__photo u-photo"
+                    src="{% static 'images/avatar.jpg' %}"
+                    alt=""
+                  />
+                  <strong class="note__author__name p-name"
+                    >@wacodev</strong
+                  >
+                </span
+                >
+              </p>
+              <span class="note__meta__divider" aria-hidden="true"
+                >&sdot;</span
+              >
+              <time
+                class="note__date dt-published"
+                datetime="2023-01-04T11:19:16.530"
+                >{{ project.date }}</time
+              >
+              <div class="note__tags">
+                {% for item in projects.tags.all %}
+                  <span class="note__tag">{{ item.name }}</span>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="note__content">
+              <div class="e-content p-name markdown">
+                <h2 class="note__title">
+                  {{ project.title }}
+                </h2>
+                <p>
+                    {{ project.short_bio|linebreaks }}
+                </p>
+                <p> 
+                  {% if project.project_url %}
+                  <a href="{{ project.project_url }}" target="_blank">Project Link</a><br>
+                  {% endif %}
+                  {% if project.github_url %}
+                  <a href="{{ project.github_url }}" target="_blank">Github Link</a>
+                  {% endif %}
+                </p>  
+              </div>
+            </div>
+          </div>
+        </div> 
+        <div>
+          <p class="u-align-center"><a href="{% url 'project' %}" class="btn btn--primary">Go to Projects</a></p>
+        </div>
+    </main>
+   
+{% endblock content %}
